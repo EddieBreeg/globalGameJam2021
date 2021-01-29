@@ -18,18 +18,30 @@ public class PlayerController : MonoBehaviour
 
     public float mouseSensitivity;
 
-    public enum powerups{
+    public enum Powerups{
         Activate = 0,
         Open = 1
     }
 
-    public bool[] powerups_inventory;
+    public bool[] powerupsInventory;
 
     // Start is called before the first frame update
     void Start()
     {
         myRb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public bool hasPowerup(Powerups pu){
+        return powerupsInventory[(int)pu];
+    }
+
+    public void removePowerup(Powerups pu){
+        powerupsInventory[(int)pu] = false;
+    }
+
+    public void addPowerup(Powerups pu){
+        powerupsInventory[(int)pu] = true;
     }
 
     // Update is called once per frame
@@ -47,5 +59,21 @@ public class PlayerController : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         transform.Rotate(Vector3.up * mouseX);
+
+        if (Input.GetMouseButton(0)) // clic gauche
+        {
+            Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            //if we hit
+            if (Physics.Raycast(ray, out hit, 100f))
+            {
+                PUPickup interac = hit.collider.GetComponent<PUPickup>();
+                if (interac != null)
+                {
+                    
+                }
+            }
+        }
     }
 }
