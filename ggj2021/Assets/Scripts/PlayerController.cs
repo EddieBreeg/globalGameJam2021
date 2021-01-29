@@ -18,6 +18,13 @@ public class PlayerController : MonoBehaviour
 
     public float mouseSensitivity;
 
+    public enum powerups{
+        Activate = 0,
+        Open = 1
+    }
+
+    public bool[] powerups_inventory;
+
     // Start is called before the first frame update
     void Start()
     {
