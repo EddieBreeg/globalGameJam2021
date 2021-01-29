@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: bordure
+    second: {fileID: 2100000, guid: 15703292386525341b305523fb3b26c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: ecran
     second: {fileID: 2100000, guid: 5c9a8b2999c8afa4ca8a0d616754d459, type: 2}
   - first:
