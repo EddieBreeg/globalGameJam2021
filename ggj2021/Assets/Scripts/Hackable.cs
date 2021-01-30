@@ -8,8 +8,6 @@ public abstract class Hackable : Interactable
 {
     public GameObject windowStatus;
 
-    public bool[] powerups;
-
     public (Powerups, SubPowerups) first_slot;
     public (Powerups, SubPowerups) second_slot;
     abstract public void hack((Powerups,SubPowerups) functions, PlayerController controller);
