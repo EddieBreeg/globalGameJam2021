@@ -22,6 +22,9 @@ public class hackableDoor : Hackable
     public Vector3 openingHeight = new Vector3(0,20,0);
 
     void Start(){
+        initialize();
+        first_slot = (Powerups.Activate ,SubPowerups.None);
+
         opening = false;
         tr = GetComponent<Transform>();
         upPoint = tr.position + openingHeight; 
@@ -29,7 +32,11 @@ public class hackableDoor : Hackable
     }
 
     public override void hack((Powerups,SubPowerups) functions, PlayerController controller){
-        addPowerup(functions.Item1);
+        if(first_slot != (Powerups.None, SubPowerups.None)){
+            second_slot = functions;
+        } else {
+            first_slot = functions;
+        }
         controller.removePowerup(functions.Item1);
 
         if(functions.Item1 == Powerups.Activate){
@@ -45,6 +52,7 @@ public class hackableDoor : Hackable
 
     public override void looseHack((Powerups,SubPowerups) functions, PlayerController controller){
         //TODO
+        Debug.Log("Hackable Door : Has lost : " + functions.Item1 + " and " + functions.Item2);
     }
 
     void Update(){

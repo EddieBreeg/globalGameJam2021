@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviour
 
     public enum Powerups{
         Activate = 0,
-        Open = 1
+        Open = 1,
+        None = 2
     }
 
     public enum SubPowerups{
@@ -33,6 +34,10 @@ public class PlayerController : MonoBehaviour
 
     public bool[] subpowerupsInventory;
     public bool[] powerupsInventory;
+
+    public GameObject[] powerupsVisu;
+
+    public GameObject[] subpowerupsVisu;
 
     Interactable focus = null;
     public GameObject interactMessage;
@@ -83,10 +88,12 @@ public class PlayerController : MonoBehaviour
 
     public void removePowerup(Powerups pu){
         powerupsInventory[(int)pu] = false;
+        powerupsVisu[(int)pu].SetActive(false);
     }
 
     public void addPowerup(Powerups pu){
         powerupsInventory[(int)pu] = true;
+        powerupsVisu[(int)pu].SetActive(true);
     }
 
     public bool hasSubPowerup(SubPowerups spu){
@@ -95,10 +102,12 @@ public class PlayerController : MonoBehaviour
 
     public void removeSubPowerup(SubPowerups spu){
         subpowerupsInventory[(int)spu] = false;
+        subpowerupsVisu[(int)spu].SetActive(false);
     }
 
     public void addSubPowerup(SubPowerups spu){
         subpowerupsInventory[(int)spu] = true;
+        subpowerupsVisu[(int)spu].SetActive(true);
     }
 
     // Update is called once per frame

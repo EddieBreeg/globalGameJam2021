@@ -6,46 +6,27 @@ using UnityEngine;
 
 public abstract class Hackable : Interactable
 {
-    public GameObject windowObject;
+    public GameObject windowStatus;
 
     public bool[] powerups;
-    public bool[] subpowerups;
+
+    public (Powerups, SubPowerups) first_slot;
+    public (Powerups, SubPowerups) second_slot;
     abstract public void hack((Powerups,SubPowerups) functions, PlayerController controller);
     abstract public void looseHack((Powerups,SubPowerups) functions, PlayerController controller);
 
-
-    public bool hasPowerup(Powerups pu){
-        return powerups[(int)pu];
-    }
-
-    public void removePowerup(Powerups pu){
-        powerups[(int)pu] = false;
-    }
-
-    public void addPowerup(Powerups pu){
-        powerups[(int)pu] = true;
-    }
-
-    public bool hasSubPowerup(SubPowerups spu){
-        return subpowerups[(int)spu];
-    }
-
-    public void removeSubPowerup(SubPowerups spu){
-        subpowerups[(int)spu] = false;
-    }
-
-    public void addSubPowerup(SubPowerups spu){
-        subpowerups[(int)spu] = true;
-    }
-
     void Start(){
-        powerups = new bool[Globally.nbPowerups];
-        subpowerups = new bool[Globally.nbSubpowerups];
+
+    }
+
+    protected void initialize(){
+        first_slot = (Powerups.None,SubPowerups.None);
+        second_slot = (Powerups.None,SubPowerups.None);
     }
 
     public override void interact(PlayerController controller){
         //launch hack window
-        windowObject.SetActive(true);
+        windowStatus.SetActive(true);
         controller.uiOn();
     }   
 

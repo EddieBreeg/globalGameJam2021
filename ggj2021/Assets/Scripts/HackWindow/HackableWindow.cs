@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using static PlayerController;
+using TMPro;
 
 public class HackableWindow : MonoBehaviour
 {
     public PlayerController controller;
     public GameObject mySelf;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,7 @@ public class HackableWindow : MonoBehaviour
     }
 
     public void turnOff(){
-        controller.uiOff();
+        //controller.uiOff();
         mySelf.SetActive(false);
     }
 
