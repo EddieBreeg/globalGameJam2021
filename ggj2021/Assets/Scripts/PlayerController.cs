@@ -25,6 +25,18 @@ public class PlayerController : MonoBehaviour
 
     public bool[] powerupsInventory;
 
+    Interactable focus = null;
+
+    //interactions management
+
+    public void setFocus(Interactable newFocus){
+        focus = newFocus;
+    }
+
+    public void focusInteract(){
+        focus.interact(this);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +53,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void addPowerup(Powerups pu){
+        Debug.Log(powerupsInventory);
         powerupsInventory[(int)pu] = true;
     }
 
@@ -60,9 +73,12 @@ public class PlayerController : MonoBehaviour
 
         transform.Rotate(Vector3.up * mouseX);
 
-        if (Input.GetMouseButton(0)) // clic gauche
-        {
-            Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
+        if (Input.GetButtonDown("Fire1")) // clic gauche pour interragir
+        {   
+            if (focus != null){
+                focusInteract();
+            }
+            /*Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             //if we hit
@@ -73,7 +89,7 @@ public class PlayerController : MonoBehaviour
                 {
                     
                 }
-            }
+            }*/
         }
     }
 }
