@@ -3,7 +3,12 @@ guid: 08db9a02ffa41c8418bb6da86a88f814
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: debris1
+    second: {fileID: 2100000, guid: 87b9af1b8aa7dae4d90022c12667a492, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -69,7 +74,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
