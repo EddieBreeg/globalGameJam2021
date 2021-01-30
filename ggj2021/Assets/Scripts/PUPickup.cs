@@ -8,12 +8,19 @@ public class PUPickup : Interactable
     //should be < to powerup inventory size
     public PlayerController.Powerups POWERUP;
 
+    public GameObject mySelf;
+    public AudioSource source;
+    public AudioClip pickupSound;
 
 
     public override void interact(PlayerController player){
         player.addPowerup(POWERUP);
         player.setFocus(null);
+
+        source.clip = pickupSound;
+        source.Play();
         //se desactive
+        mySelf.SetActive(false);
     }
 
     // Start is called before the first frame update
