@@ -249,6 +249,7 @@ MonoBehaviour:
   speed: 50
   myCamera: {fileID: 963194227}
   mouseSensitivity: 100
+  powerups_inventory: 0000
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
