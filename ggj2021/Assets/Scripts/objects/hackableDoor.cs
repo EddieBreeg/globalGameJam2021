@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using static PlayerController;
 
-public class hackableDoor1 : Hackable
+public class hackableDoor : Hackable
 {
     public AudioClip soundNull;
     public AudioSource source;
