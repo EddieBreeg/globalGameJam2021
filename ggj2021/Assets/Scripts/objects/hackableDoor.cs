@@ -7,6 +7,7 @@ using static PlayerController;
 public class hackableDoor : Hackable
 {
     public AudioClip soundNull;
+    public GameObject door;
     public AudioSource source;
 
     Transform tr;
