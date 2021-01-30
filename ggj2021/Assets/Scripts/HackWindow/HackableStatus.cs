@@ -19,7 +19,7 @@ public class HackableStatus : MonoBehaviour
 
     private Hackable hobj;
 
-    void OnEnable(){
+    void updateInfos(){
         hobj = (Hackable) controller.getFocus();
 
         // setup status
@@ -34,7 +34,10 @@ public class HackableStatus : MonoBehaviour
         } else {
             status[1].SetActive(false);
         }
+    }
 
+    void Update(){
+        updateInfos();
     }
 
     void Start(){

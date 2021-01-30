@@ -24,7 +24,6 @@ public class hackableDoor : Hackable
 
     void Start(){
         initialize();
-        first_slot = (Powerups.Activate ,SubPowerups.None);
 
         opening = false;
         tr = GetComponent<Transform>();
@@ -32,7 +31,7 @@ public class hackableDoor : Hackable
         epsilon = 0.5f;
     }
 
-    public override void hack((Powerups,SubPowerups) functions, PlayerController controller){
+    public override void hack((Powerups,SubPowerups) functions, PlayerController controller){        
         if(first_slot != (Powerups.None, SubPowerups.None)){
             second_slot = functions;
         } else {
