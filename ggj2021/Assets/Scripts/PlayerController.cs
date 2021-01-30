@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     Interactable focus = null;
     public GameObject interactMessage;
 
+    bool isUiOn = false;
+
     //interactions management
 
     public void setFocus(Interactable newFocus){
@@ -45,9 +47,24 @@ public class PlayerController : MonoBehaviour
         focus.interact(this);
     }
 
+    public void uiOn(){
+        isUiOn = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+    
+    public void uiOff(){
+        isUiOn = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public Interactable getFocus(){
+        return focus;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        powerupsInventory = new bool[Globally.nbPowerups];
         myRb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -68,43 +85,45 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // move
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
+        if (!isUiOn){
+            // move
+            horizontal = Input.GetAxis("Horizontal");
+            vertical = Input.GetAxis("Vertical");
 
-        front = transform.forward;
-        right = transform.right; //left/right axis
+            front = transform.forward;
+            right = transform.right; //left/right axis
 
-        myRb.MovePosition(transform.position + front * vertical * speed * Time.deltaTime + right * horizontal * speed * Time.deltaTime);
+            myRb.MovePosition(transform.position + front * vertical * speed * Time.deltaTime + right * horizontal * speed * Time.deltaTime);
 
-        // turn around
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+            // turn around
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        transform.Rotate(Vector3.up * mouseX);
+            transform.Rotate(Vector3.up * mouseX);
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        myCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            myCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
-        if (Input.GetButtonDown("Fire1")) // interragir
-        {   
-            if (focus != null){
-                focusInteract();
-            }
-            /*Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            //if we hit
-            if (Physics.Raycast(ray, out hit, 100f))
-            {
-                PUPickup interac = hit.collider.GetComponent<PUPickup>();
-                if (interac != null)
-                {
-                    
+            if (Input.GetButtonDown("Fire1")) // interragir
+            {   
+                if (focus != null){
+                    focusInteract();
                 }
-            }*/
+                /*Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                //if we hit
+                if (Physics.Raycast(ray, out hit, 100f))
+                {
+                    PUPickup interac = hit.collider.GetComponent<PUPickup>();
+                    if (interac != null)
+                    {
+                        
+                    }
+                }*/
+            }
         }
     }
 }

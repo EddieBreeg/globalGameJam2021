@@ -107,3 +107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   POWERUP: 1
+  mySelf: {fileID: 6894137080615433970}
+  source: {fileID: 0}
+  pickupSound: {fileID: 8300000, guid: 573e1719566cba848a85b87f91688507, type: 3}
