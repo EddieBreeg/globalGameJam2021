@@ -52,7 +52,11 @@ TextureImporter:
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 1
+<<<<<<< HEAD
   textureShape: 1
+=======
+  textureShape: 2
+>>>>>>> a933128038cd369e065998eccb4882c424d29b45
   singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
