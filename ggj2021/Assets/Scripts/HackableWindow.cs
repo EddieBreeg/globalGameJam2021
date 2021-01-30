@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using static PlayerController;
 
 public class HackableWindow : MonoBehaviour
 {
@@ -30,6 +32,6 @@ public class HackableWindow : MonoBehaviour
 
     public void launchHack(int pu){
         Hackable hobj = (Hackable) controller.getFocus();
-        hobj.hack((PlayerController.Powerups) pu, controller);
+        hobj.hack(((PlayerController.Powerups) pu, PlayerController.SubPowerups.None), controller);
     }
 }

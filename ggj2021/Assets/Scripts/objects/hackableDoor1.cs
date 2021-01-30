@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using static PlayerController;
 
 public class hackableDoor1 : Hackable
 {
@@ -9,10 +11,10 @@ public class hackableDoor1 : Hackable
 
     bool active;
 
-    public override void hack(PlayerController.Powerups pu, PlayerController controller){
-        powerups[(int)pu] = true;
+    public override void hack((Powerups,SubPowerups) functions, PlayerController controller){
+        powerups[(int)functions.Item1] = true;
 
-        switch (pu)
+        switch (functions.Item1)
         {
             case PlayerController.Powerups.Activate:
                 //do something
