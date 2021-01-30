@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed = 50f;
 
     private Rigidbody myRb;
 
@@ -16,7 +16,9 @@ public class PlayerController : MonoBehaviour
 
     public Camera myCamera;
 
-    public float mouseSensitivity;
+    public float mouseSensitivity = 50f;
+
+    private float xRotation = 0f;
 
     public enum Powerups{
         Activate = 0,
@@ -26,11 +28,17 @@ public class PlayerController : MonoBehaviour
     public bool[] powerupsInventory;
 
     Interactable focus = null;
+    public GameObject interactMessage;
 
     //interactions management
 
     public void setFocus(Interactable newFocus){
         focus = newFocus;
+        if (newFocus == null){
+            interactMessage.SetActive(false);
+        } else{
+            interactMessage.SetActive(true);
+        }
     }
 
     public void focusInteract(){
@@ -60,6 +68,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // move
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
@@ -68,12 +77,18 @@ public class PlayerController : MonoBehaviour
 
         myRb.MovePosition(transform.position + front * vertical * speed * Time.deltaTime + right * horizontal * speed * Time.deltaTime);
 
+        // turn around
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         transform.Rotate(Vector3.up * mouseX);
 
-        if (Input.GetButtonDown("Fire1")) // clic gauche pour interragir
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        myCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
+        if (Input.GetButtonDown("Fire1")) // interragir
         {   
             if (focus != null){
                 focusInteract();
