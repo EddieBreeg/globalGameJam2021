@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TestHackable : Hackable
 {
+    //TODO : change function signature (+ arg PlayerController.SubPowerups)
     public override void hack(PlayerController.Powerups pu, PlayerController controller){
         switch (pu)
         {

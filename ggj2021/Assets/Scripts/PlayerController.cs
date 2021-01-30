@@ -25,6 +25,12 @@ public class PlayerController : MonoBehaviour
         Open = 1
     }
 
+    public enum SubPowerups{
+        Repeat = 0,
+        Timeout = 1
+    }
+
+    public bool[] subpowerupsInventory;
     public bool[] powerupsInventory;
 
     Interactable focus = null;
@@ -65,6 +71,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         powerupsInventory = new bool[Globally.nbPowerups];
+        subpowerupsInventory = new bool[Globally.nbSubpowerups];
         myRb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -78,8 +85,19 @@ public class PlayerController : MonoBehaviour
     }
 
     public void addPowerup(Powerups pu){
-        Debug.Log(powerupsInventory);
         powerupsInventory[(int)pu] = true;
+    }
+
+    public bool hasSubPowerup(SubPowerups spu){
+        return subpowerupsInventory[(int)spu];
+    }
+
+    public void removeSubPowerup(SubPowerups spu){
+        subpowerupsInventory[(int)spu] = false;
+    }
+
+    public void addSubPowerup(SubPowerups spu){
+        subpowerupsInventory[(int)spu] = true;
     }
 
     // Update is called once per frame
