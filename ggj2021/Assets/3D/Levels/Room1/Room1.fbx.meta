@@ -2,23 +2,43 @@ fileFormatVersion: 2
 guid: f05b563ef073bc246a481428969d2f9a
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable:
+  internalIDToNameTable: []
+  externalObjects:
   - first:
-      74: -7508905966330092808
-    second: Cube_cell.001|Shader NodetreeAction.001
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: 82c0b57ef55c8464291afdb623070d02, type: 2}
   - first:
-      74: 8561570079938298832
-    second: Cube_cell.001|Shader NodetreeAction.005
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete.001
+    second: {fileID: 2100000, guid: ce945d7073364e5429600f26943eea9e, type: 2}
   - first:
-      74: 5139264809708460864
-    second: Cube_cell.001|Shader NodetreeAction.006
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete.002
+    second: {fileID: 2100000, guid: 2082ac650e77f494fa8ae08a702365db, type: 2}
   - first:
-      74: -2972004762227911131
-    second: Cube_cell.001|Shader NodetreeAction.007
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light
+    second: {fileID: 2100000, guid: 1d1318ffa49a49d4abac75f8e2f7c86c, type: 2}
   - first:
-      74: -9182982548887106663
-    second: Cube_cell.001|Shader NodetreeAction.008
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 9934fb388dea7cc4d9d210e912e02e30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: b17281430ee79de41ad1180e448ace7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: 51952bc2a342a5b42848115deccc0398, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
