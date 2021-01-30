@@ -16,6 +16,10 @@ public class hackableNull : Hackable
                 source.Play();
                 break;
         }
-
     }
+
+    public override void looseHack((Powerups,SubPowerups) functions, PlayerController controller){
+        //TODO
+    }
+    
 }
