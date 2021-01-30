@@ -18,11 +18,43 @@ public class PlayerController : MonoBehaviour
 
     public float mouseSensitivity;
 
+    public enum Powerups{
+        Activate = 0,
+        Open = 1
+    }
+
+    public bool[] powerupsInventory;
+
+    Interactable focus = null;
+
+    //interactions management
+
+    public void setFocus(Interactable newFocus){
+        focus = newFocus;
+    }
+
+    public void focusInteract(){
+        focus.interact(this);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         myRb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public bool hasPowerup(Powerups pu){
+        return powerupsInventory[(int)pu];
+    }
+
+    public void removePowerup(Powerups pu){
+        powerupsInventory[(int)pu] = false;
+    }
+
+    public void addPowerup(Powerups pu){
+        Debug.Log(powerupsInventory);
+        powerupsInventory[(int)pu] = true;
     }
 
     // Update is called once per frame
@@ -40,5 +72,24 @@ public class PlayerController : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         transform.Rotate(Vector3.up * mouseX);
+
+        if (Input.GetButtonDown("Fire1")) // clic gauche pour interragir
+        {   
+            if (focus != null){
+                focusInteract();
+            }
+            /*Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            //if we hit
+            if (Physics.Raycast(ray, out hit, 100f))
+            {
+                PUPickup interac = hit.collider.GetComponent<PUPickup>();
+                if (interac != null)
+                {
+                    
+                }
+            }*/
+        }
     }
 }

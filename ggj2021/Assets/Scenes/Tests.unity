@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 119492594}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,6 +249,7 @@ MonoBehaviour:
   speed: 50
   myCamera: {fileID: 963194227}
   mouseSensitivity: 100
+  powerupsInventory: 0000
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
