@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
 
     public enum SubPowerups{
         Repeat = 0,
-        Timeout = 1
+        Timeout = 1,
+        None = 2
     }
 
     public bool[] subpowerupsInventory;
