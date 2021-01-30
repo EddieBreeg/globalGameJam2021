@@ -4,21 +4,101 @@ ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: -7508905966330092808
-    second: Cube_cell.001|Shader NodetreeAction.001
+      74: 6168100369476612770
+    second: Door.R|Cube.002Action.001
   - first:
-      74: 8561570079938298832
-    second: Cube_cell.001|Shader NodetreeAction.005
+      74: -6619817124768089447
+    second: Door.R|Cube.004Action
   - first:
-      74: 5139264809708460864
-    second: Cube_cell.001|Shader NodetreeAction.006
+      74: -6597684291313957563
+    second: Door.R|Shader NodetreeAction.001
   - first:
-      74: -2972004762227911131
-    second: Cube_cell.001|Shader NodetreeAction.007
+      74: 3126158956117330331
+    second: Door.R|Shader NodetreeAction.002
   - first:
-      74: -9182982548887106663
-    second: Cube_cell.001|Shader NodetreeAction.008
-  externalObjects: {}
+      74: 2511467258291586219
+    second: Door.R|Shader NodetreeAction.003
+  - first:
+      74: -7354669871193758726
+    second: Door.R|Shader NodetreeAction.004
+  - first:
+      74: 3322729488943758002
+    second: Door.R|Shader NodetreeAction.005
+  - first:
+      74: -776119782837678109
+    second: Door.R|Shader NodetreeAction.006
+  - first:
+      74: 2625614831126757833
+    second: Door.R|Shader NodetreeAction.007
+  - first:
+      74: -2793010117092797344
+    second: Door.R|Shader NodetreeAction.009
+  - first:
+      74: -1284316630568044906
+    second: Door.L|Cube.002Action.001
+  - first:
+      74: 3416541154670514244
+    second: Door.L|Cube.004Action
+  - first:
+      74: -151266197922962547
+    second: Door.L|Shader NodetreeAction.001
+  - first:
+      74: -8800953002136432142
+    second: Door.L|Shader NodetreeAction.002
+  - first:
+      74: -6264688352850294384
+    second: Door.L|Shader NodetreeAction.003
+  - first:
+      74: 1754021926897427667
+    second: Door.L|Shader NodetreeAction.004
+  - first:
+      74: 8487307192271750571
+    second: Door.L|Shader NodetreeAction.005
+  - first:
+      74: 9130409302132163076
+    second: Door.L|Shader NodetreeAction.006
+  - first:
+      74: -1873952296089459448
+    second: Door.L|Shader NodetreeAction.007
+  - first:
+      74: -6124782902695441300
+    second: Door.L|Shader NodetreeAction.009
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: afea6ba33b836944cacd4ac2ca67b7ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete
+    second: {fileID: 2100000, guid: eb0dbdfb61a2ba04284237bce3243214, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete.001
+    second: {fileID: 2100000, guid: 5094f7b50a3d30b468f575dc30453903, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator
+    second: {fileID: 2100000, guid: 1176b03c67afc7744b6fb44619b00302, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light
+    second: {fileID: 2100000, guid: ecc3c63fdd17fa843a9b7909628ae115, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 9934fb388dea7cc4d9d210e912e02e30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: 880f13d0888928f4290dd6f24ca0b37b, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

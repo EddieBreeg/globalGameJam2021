@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8f42c9a2657a0ca478c7b87a3fe4d31d
+guid: 068e242b8b1f3ef40ae6edcfeccdf85d
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -10,33 +10,43 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: afea6ba33b836944cacd4ac2ca67b7ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Concrete.001
-    second: {fileID: 2100000, guid: 5094f7b50a3d30b468f575dc30453903, type: 2}
+    second: {fileID: 2100000, guid: 2b3187a1946a7054e98709a541b5a608, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Concrete.002
-    second: {fileID: 2100000, guid: 436ca944f6bb4354d909f28ebfaff74d, type: 2}
+    second: {fileID: 2100000, guid: 06e91599f32f74048a5f2caa275d1c88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Doors
+    second: {fileID: 2100000, guid: 1f13bb98eebcc474496d301f730e4745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light
+    second: {fileID: 2100000, guid: ecc3c63fdd17fa843a9b7909628ae115, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.002
-    second: {fileID: 2100000, guid: 6d8007421b66c184187bad633fe829d5, type: 2}
+    second: {fileID: 2100000, guid: bc8b229dadeb05e4ba07bc50c31f845f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: No Name
-    second: {fileID: 2100000, guid: 7cac316622d540249b062cfc4fea4251, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: debris1
-    second: {fileID: 2100000, guid: db344e3c818052e4caa62e6da42f5bff, type: 2}
+    second: {fileID: 2100000, guid: 865752f632919754fb06e7c13fb3bd71, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: glass
-    second: {fileID: 2100000, guid: 880f13d0888928f4290dd6f24ca0b37b, type: 2}
+    second: {fileID: 2100000, guid: 91096e037482b5d43968e4055d1530f4, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
