@@ -25,6 +25,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Doors
+    second: {fileID: 2100000, guid: 1f13bb98eebcc474496d301f730e4745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Light
     second: {fileID: 2100000, guid: ecc3c63fdd17fa843a9b7909628ae115, type: 2}
   - first:
