@@ -12,7 +12,7 @@ public class LaunchButton : MonoBehaviour
     void Start()
     {   
         launch = GetComponent<Button>();
-        launch.onClick.AddListener(() => ChangeScene.changeScene("Scenes/Tests"));
+        launch.onClick.AddListener(() => ChangeScene.changeScene("Scenes/Dev/TestMael"));
     }
 
     // Update is called once per frame
