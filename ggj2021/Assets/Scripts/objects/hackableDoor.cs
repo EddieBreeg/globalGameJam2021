@@ -57,6 +57,7 @@ public class hackableDoor : Hackable
 
     void Update(){
         if(opening){
+            Debug.Log("Opening door");
             tr.position += Vector3.up * Time.deltaTime * speed;
             float y = tr.position.y - upPoint.y;
             if(Math.Abs(y) < epsilon){
