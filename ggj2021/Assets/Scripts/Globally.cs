@@ -13,4 +13,8 @@ public static class Globally{
 
     public const string sub_fn_name_repeat = "Répeter";
     public const string sub_fn_name_timeout = "Expiration";
+
+    public static PlayerController getPlayer(){
+        return GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+    }
 }

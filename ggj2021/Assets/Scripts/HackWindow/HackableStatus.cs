@@ -20,7 +20,7 @@ public class HackableStatus : MonoBehaviour
     private Hackable hobj;
 
     public void updateInfos(){
-        hobj = (Hackable) controller.getFocus();
+        hobj = (Hackable) Globally.getPlayer().getFocus();
 
         if (hobj != null){
             // setup status

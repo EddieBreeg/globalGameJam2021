@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
 
     bool isUiOn = false;
 
+    int memoriesRecovered = 0;
+
     //interactions management
 
     public void setFocus(Interactable newFocus){
@@ -67,6 +69,8 @@ public class PlayerController : MonoBehaviour
     public void uiOff(){
         isUiOn = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Debug.Log("Ui off: " + isUiOn);
+        Debug.Log("Ui off: " + Cursor.lockState);
     }
 
     public Interactable getFocus(){
@@ -108,6 +112,14 @@ public class PlayerController : MonoBehaviour
     public void addSubPowerup(SubPowerups spu){
         subpowerupsInventory[(int)spu] = true;
         subpowerupsVisu[(int)spu].SetActive(true);
+    }
+
+    public void gatherMemory(){
+        memoriesRecovered+=1;
+    }
+
+    public int getMemories(){
+        return memoriesRecovered;
     }
 
     // Update is called once per frame

@@ -2,24 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PUPickup : Interactable
+public class Memory : Interactable
 {
-
-    //should be < to powerup inventory size
-    public PlayerController.Powerups POWERUP;
-
+    public GameObject windowMemory;
     public GameObject mySelf;
     public AudioSource source;
-    public AudioClip pickupSound;
+    public AudioClip activateSound;
+
+    public bool corrupted;
 
     public override void interact(PlayerController player){
-        player.addPowerup(POWERUP);
         player.setFocus(null);
-
-        source.clip = pickupSound;
+        Globally.getPlayer().uiOn();
+        windowMemory.SetActive(true);
+        source.clip = activateSound;
         source.Play();
-        //se desactive
+    }
+
+    public void gatherMemory(){
         mySelf.SetActive(false);
+        Globally.getPlayer().uiOn();
+        Globally.getPlayer().gatherMemory();
+    }
+
+    public bool isCorrupted(){
+        return corrupted;
     }
 
     // Start is called before the first frame update
