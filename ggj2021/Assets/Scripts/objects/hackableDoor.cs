@@ -55,6 +55,7 @@ public class hackableDoor : Hackable
             active = false;
         } else if(functions.Item1 == Powerups.Open) {
             if(active){
+                opening = false;
                 closing = true;
             }
         } else {
@@ -65,14 +66,14 @@ public class hackableDoor : Hackable
     }
 
     void Update(){
-        if(opening){
+        if(active && opening){
             tr.position += Vector3.up * Time.deltaTime * speed;
             float y = tr.position.y - upPoint.y;
             if(Math.Abs(y) < epsilon){
                 opening = false;
             }
         }
-        if(closing){
+        if(active && closing){
             tr.position -= Vector3.up * Time.deltaTime * speed;
             float y = tr.position.y;
             if(Math.Abs(y) < epsilon){
