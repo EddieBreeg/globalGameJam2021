@@ -61,8 +61,6 @@ public class hackableDoor : Hackable
         } else {
             //Default
         }
-
-        Debug.Log("Hackable Door : Has lost : " + functions.Item1 + " and " + functions.Item2);
     }
 
     void Update(){

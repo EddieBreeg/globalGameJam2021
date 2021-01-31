@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using static PlayerController;
+using static Globally;
 using UnityEngine;
 
 public abstract class Hackable : Interactable
@@ -22,10 +23,10 @@ public abstract class Hackable : Interactable
         second_slot = (Powerups.None,SubPowerups.None);
     }
 
-    public override void interact(PlayerController controller){
+    public override void interact(){
         //launch hack window
         windowStatus.SetActive(true);
-        controller.uiOn();
+        Globally.getPlayer().uiOn();
     }   
 
 }

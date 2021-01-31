@@ -19,5 +19,5 @@ public abstract class Interactable : MonoBehaviour{
         }
     }
 
-    public abstract void interact(PlayerController player);
+    public abstract void interact();
 }

@@ -13,9 +13,9 @@ public class SubPUPickup : Interactable
     public AudioClip pickupSound;
 
 
-    public override void interact(PlayerController player){
-        player.addSubPowerup(SUBPOWERUP);
-        player.setFocus(null);
+    public override void interact(){
+        Globally.getPlayer().addSubPowerup(SUBPOWERUP);
+        Globally.getPlayer().setFocus(null);
 
         source.clip = pickupSound;
         source.Play();

@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void focusInteract(){
-        focus.interact(this);
+        focus.interact();
     }
 
     public void uiOn(){

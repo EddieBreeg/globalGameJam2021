@@ -8,7 +8,7 @@ using TMPro;
 
 public class HackableWindow : MonoBehaviour
 {
-    public PlayerController controller;
+    PlayerController controller;
     public GameObject mySelf;
     public HackableStatus mainWin;
 
@@ -28,7 +28,7 @@ public class HackableWindow : MonoBehaviour
     void initialize(){
         mainfct.SetAllTogglesOff();
         secondefct.SetAllTogglesOff();
-
+        controller = Globally.getPlayer();
 
         tog_Activate.enabled = false;
         tog_Open.enabled = false;
@@ -39,10 +39,7 @@ public class HackableWindow : MonoBehaviour
 
     void Start()
     {
-        apply.onClick.AddListener(()=>{
-            //get values of functions
-            //apply hacks
-        });
+
     }
 
 

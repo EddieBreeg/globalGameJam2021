@@ -11,8 +11,8 @@ public class Memory : Interactable
 
     public bool corrupted;
 
-    public override void interact(PlayerController player){
-        player.setFocus(null);
+    public override void interact(){
+        Globally.getPlayer().setFocus(null);
         Globally.getPlayer().uiOn();
         windowMemory.SetActive(true);
         source.clip = activateSound;

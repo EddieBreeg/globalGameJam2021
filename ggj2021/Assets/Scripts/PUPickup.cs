@@ -12,9 +12,9 @@ public class PUPickup : Interactable
     public AudioSource source;
     public AudioClip pickupSound;
 
-    public override void interact(PlayerController player){
-        player.addPowerup(POWERUP);
-        player.setFocus(null);
+    public override void interact(){
+        Globally.getPlayer().addPowerup(POWERUP);
+        Globally.getPlayer().setFocus(null);
 
         source.clip = pickupSound;
         source.Play();

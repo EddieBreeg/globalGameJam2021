@@ -15,8 +15,6 @@ public class HackableStatus : MonoBehaviour
     public Button close1;
     public Button close2;
 
-    public PlayerController controller;
-
     private Hackable hobj;
 
     public void updateInfos(){
@@ -53,7 +51,7 @@ public class HackableStatus : MonoBehaviour
             hobj.first_slot = (Powerups.None, SubPowerups.None);
             status[0].SetActive(false);
 
-            hobj.looseHack((mainpow,secpow), controller);
+            hobj.looseHack((mainpow,secpow), Globally.getPlayer());
             returnToPlayer((mainpow,secpow));
         });
 
@@ -64,20 +62,20 @@ public class HackableStatus : MonoBehaviour
             hobj.second_slot = (Powerups.None, SubPowerups.None);
             status[1].SetActive(false);
 
-            hobj.looseHack((mainpow,secpow), controller);
+            hobj.looseHack((mainpow,secpow), Globally.getPlayer());
             returnToPlayer((mainpow,secpow));
         });
     }
 
     private void returnToPlayer((Powerups,SubPowerups) functions){
-        controller.addPowerup(functions.Item1);
+        Globally.getPlayer().addPowerup(functions.Item1);
         if(functions.Item2 != SubPowerups.None){
-            controller.addSubPowerup(functions.Item2);
+            Globally.getPlayer().addSubPowerup(functions.Item2);
         }
     }
 
     public void allturnOff(){
-        controller.uiOff();
+        Globally.getPlayer().uiOff();
         mySelf.SetActive(false);
         windowsHack.SetActive(false);
     }
