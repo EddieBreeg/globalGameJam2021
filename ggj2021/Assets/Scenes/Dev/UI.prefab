@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 5835990407889343232}
   - component: {fileID: 5835990407889343235}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: ToggleActivate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -349,7 +349,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: repeat()
+  m_Text: timeout()
 --- !u!1 &5835990408070303956
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +502,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: activate()
+  m_Text: open()
 --- !u!1 &5835990408118775726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,7 +1190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: open()
+  m_Text: activate()
 --- !u!1 &5835990408548392901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,7 +1268,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: timer()
+  m_Text: repeat()
 --- !u!1 &5835990408585014604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,7 +1342,7 @@ GameObject:
   - component: {fileID: 5835990408608127428}
   - component: {fileID: 5835990408608127429}
   m_Layer: 5
-  m_Name: hack1
+  m_Name: applyHack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1470,7 +1470,7 @@ GameObject:
   - component: {fileID: 5835990408699788754}
   - component: {fileID: 5835990408699788765}
   m_Layer: 5
-  m_Name: Toggle (1)
+  m_Name: ToggleOpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2108,7 +2108,7 @@ GameObject:
   - component: {fileID: 5835990408979359538}
   - component: {fileID: 5835990408979359549}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: ToggleRepeat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2576,7 +2576,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
   mySelf: {fileID: 5835990409149067831}
-  apply: {fileID: 0}
+  mainWin: {fileID: 5835990408585014606}
+  mainfct: {fileID: 5835990409764665822}
+  secondefct: {fileID: 5835990407783055227}
+  apply: {fileID: 5835990408608127429}
+  tog_Activate: {fileID: 5835990407889343235}
+  tog_Open: {fileID: 5835990408699788765}
+  tog_Timeout: {fileID: 5835990409413645698}
+  tog_Repeat: {fileID: 5835990408979359549}
 --- !u!1 &5835990409209653982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2828,7 +2835,7 @@ GameObject:
   - component: {fileID: 5835990409413645699}
   - component: {fileID: 5835990409413645698}
   m_Layer: 5
-  m_Name: Toggle (1)
+  m_Name: ToggleTimeout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3472,7 +3479,7 @@ PrefabInstance:
     - target: {fileID: 1923091895364491560, guid: a36b6bec309fc784a9b2aec97360aec0,
         type: 3}
       propertyPath: m_text
-      value: open()
+      value: activate()
       objectReference: {fileID: 0}
     - target: {fileID: 1923091895364491560, guid: a36b6bec309fc784a9b2aec97360aec0,
         type: 3}
@@ -3482,7 +3489,7 @@ PrefabInstance:
     - target: {fileID: 1923091895589865761, guid: a36b6bec309fc784a9b2aec97360aec0,
         type: 3}
       propertyPath: m_Name
-      value: powerUpSlot
+      value: slotActivate
       objectReference: {fileID: 0}
     - target: {fileID: 1923091895589865761, guid: a36b6bec309fc784a9b2aec97360aec0,
         type: 3}
@@ -3612,7 +3619,7 @@ PrefabInstance:
     - target: {fileID: 1956093419946339881, guid: e2efd9159daad7e4b99b5475b09e098c,
         type: 3}
       propertyPath: m_Name
-      value: powerUpSlotsmall (1)
+      value: slotTimeout
       objectReference: {fileID: 0}
     - target: {fileID: 1956093419946339881, guid: e2efd9159daad7e4b99b5475b09e098c,
         type: 3}
@@ -3727,7 +3734,7 @@ PrefabInstance:
     - target: {fileID: 1956093420255739424, guid: e2efd9159daad7e4b99b5475b09e098c,
         type: 3}
       propertyPath: m_text
-      value: repeat()
+      value: timeout()
       objectReference: {fileID: 0}
     - target: {fileID: 1956093420255739424, guid: e2efd9159daad7e4b99b5475b09e098c,
         type: 3}
@@ -3895,7 +3902,7 @@ PrefabInstance:
     - target: {fileID: 1923091895364491560, guid: a36b6bec309fc784a9b2aec97360aec0,
         type: 3}
       propertyPath: m_text
-      value: activate()
+      value: open()
       objectReference: {fileID: 0}
     - target: {fileID: 1923091895364491560, guid: a36b6bec309fc784a9b2aec97360aec0,
         type: 3}
@@ -3905,7 +3912,7 @@ PrefabInstance:
     - target: {fileID: 1923091895589865761, guid: a36b6bec309fc784a9b2aec97360aec0,
         type: 3}
       propertyPath: m_Name
-      value: powerUpSlot (1)
+      value: slotOpen
       objectReference: {fileID: 0}
     - target: {fileID: 1923091895589865761, guid: a36b6bec309fc784a9b2aec97360aec0,
         type: 3}
@@ -4035,7 +4042,7 @@ PrefabInstance:
     - target: {fileID: 1956093419946339881, guid: e2efd9159daad7e4b99b5475b09e098c,
         type: 3}
       propertyPath: m_Name
-      value: powerUpSlotsmall
+      value: slotRepeat
       objectReference: {fileID: 0}
     - target: {fileID: 1956093419946339881, guid: e2efd9159daad7e4b99b5475b09e098c,
         type: 3}
@@ -4150,7 +4157,7 @@ PrefabInstance:
     - target: {fileID: 1956093420255739424, guid: e2efd9159daad7e4b99b5475b09e098c,
         type: 3}
       propertyPath: m_text
-      value: 'timer()
+      value: 'repeat()
 
 '
       objectReference: {fileID: 0}

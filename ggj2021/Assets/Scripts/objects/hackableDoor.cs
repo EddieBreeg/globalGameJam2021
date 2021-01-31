@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -42,9 +42,9 @@ public class hackableDoor : Hackable
         if(functions.Item1 == Powerups.Activate){
             active = true;
         } else if(functions.Item1 == Powerups.Open){
-            if(active){
+            //if(active){
                 opening = true;
-            }
+            //}
         } else {
             //default
         }

@@ -10,7 +10,7 @@ public class HackableWindow : MonoBehaviour
 {
     public PlayerController controller;
     public GameObject mySelf;
-
+    public HackableStatus mainWin;
 
     public ToggleGroup mainfct;
     public ToggleGroup secondefct;
@@ -94,5 +94,8 @@ public class HackableWindow : MonoBehaviour
             secondefct_enum = SubPowerups.Repeat;    
         
         hobj.hack((mainfct_enum, secondefct_enum), controller);
+
+        mainWin.updateInfos();
+        mySelf.SetActive(false);
     }
 }

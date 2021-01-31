@@ -19,24 +19,27 @@ public class HackableStatus : MonoBehaviour
 
     private Hackable hobj;
 
-    void updateInfos(){
+    public void updateInfos(){
         hobj = (Hackable) controller.getFocus();
 
-        // setup status
-        if (hobj.first_slot != (Powerups.None, SubPowerups.None)){
-            status[0].GetComponent<statusManagement>().setNames((hobj.first_slot));
-        } else {
-            status[0].SetActive(false);
+        if (hobj != null){
+            // setup status
+            if (hobj.first_slot != (Powerups.None, SubPowerups.None)){
+                status[0].GetComponent<statusManagement>().setNames((hobj.first_slot));
+            } else {
+                status[0].SetActive(false);
+            }
+            
+            if (hobj.second_slot != (Powerups.None, SubPowerups.None)){
+                status[1].GetComponent<statusManagement>().setNames((hobj.second_slot));
+            } else {
+                status[1].SetActive(false);
+            }
         }
-        
-        if (hobj.second_slot != (Powerups.None, SubPowerups.None)){
-            status[1].GetComponent<statusManagement>().setNames((hobj.second_slot));
-        } else {
-            status[1].SetActive(false);
-        }
+
     }
 
-    void Update(){
+    void OnEnable(){
         updateInfos();
     }
 
