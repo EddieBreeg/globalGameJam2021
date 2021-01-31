@@ -845,6 +845,11 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 1.43
       objectReference: {fileID: 0}
+    - target: {fileID: 1019627232145006191, guid: 2c81b9b3a1f4d7646845b258c1acbac4,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c81b9b3a1f4d7646845b258c1acbac4, type: 3}
 --- !u!4 &290514679 stripped
@@ -968,17 +973,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 62de1ee2e1a04354483138b5a4874030,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.15
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62de1ee2e1a04354483138b5a4874030,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62de1ee2e1a04354483138b5a4874030,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.15
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62de1ee2e1a04354483138b5a4874030,
         type: 3}
@@ -1067,7 +1072,7 @@ PrefabInstance:
     - target: {fileID: 7749987571852563037, guid: 24aa9d6a52d6b774989a85da1a68d141,
         type: 3}
       propertyPath: m_Shadows.m_Type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7749987571852563038, guid: 24aa9d6a52d6b774989a85da1a68d141,
         type: 3}
@@ -1841,7 +1846,7 @@ PrefabInstance:
     - target: {fileID: 7749987571852563037, guid: 24aa9d6a52d6b774989a85da1a68d141,
         type: 3}
       propertyPath: m_Shadows.m_Type
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7749987571852563038, guid: 24aa9d6a52d6b774989a85da1a68d141,
         type: 3}
@@ -3898,7 +3903,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -4643,7 +4648,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
