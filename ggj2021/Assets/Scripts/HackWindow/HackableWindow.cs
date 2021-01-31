@@ -82,11 +82,6 @@ public class HackableWindow : MonoBehaviour
             mainfct_enum = Powerups.Activate;
         if(tog_Open.isOn)
             mainfct_enum = Powerups.Open;
-        
-        Debug.Log("tog_activate is on ? "+tog_Activate.isOn);
-        Debug.Log("tog_Open is on ? " + tog_Open.isOn);
-        Debug.Log(mainfct_enum);
-
 
         if(tog_Timeout.isOn)
             secondefct_enum = SubPowerups.Timeout;

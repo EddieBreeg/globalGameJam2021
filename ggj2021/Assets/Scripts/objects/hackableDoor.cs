@@ -26,9 +26,9 @@ public class hackableDoor : Hackable
         initialize();
 
         opening = false;
-        tr = GetComponent<Transform>();
+        tr = door.GetComponent<Transform>();
         upPoint = tr.position + openingHeight; 
-        epsilon = 0.5f;
+        epsilon = 1f;
     }
 
     public override void hack((Powerups,SubPowerups) functions, PlayerController controller){        
@@ -42,26 +42,41 @@ public class hackableDoor : Hackable
         if(functions.Item1 == Powerups.Activate){
             active = true;
         } else if(functions.Item1 == Powerups.Open){
-            //if(active){
+            if(active){
                 opening = true;
-            //}
+            }
         } else {
             //default
         }
     }
 
     public override void looseHack((Powerups,SubPowerups) functions, PlayerController controller){
-        //TODO
+        if(functions.Item1 == Powerups.Activate){
+            active = false;
+        } else if(functions.Item1 == Powerups.Open) {
+            if(active){
+                closing = true;
+            }
+        } else {
+            //Default
+        }
+
         Debug.Log("Hackable Door : Has lost : " + functions.Item1 + " and " + functions.Item2);
     }
 
     void Update(){
         if(opening){
-            Debug.Log("Opening door");
             tr.position += Vector3.up * Time.deltaTime * speed;
             float y = tr.position.y - upPoint.y;
             if(Math.Abs(y) < epsilon){
                 opening = false;
+            }
+        }
+        if(closing){
+            tr.position -= Vector3.up * Time.deltaTime * speed;
+            float y = tr.position.y;
+            if(Math.Abs(y) < epsilon){
+                closing = false;
             }
         }
     }

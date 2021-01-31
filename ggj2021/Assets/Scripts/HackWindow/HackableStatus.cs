@@ -25,12 +25,14 @@ public class HackableStatus : MonoBehaviour
         if (hobj != null){
             // setup status
             if (hobj.first_slot != (Powerups.None, SubPowerups.None)){
+                status[0].SetActive(true);
                 status[0].GetComponent<statusManagement>().setNames((hobj.first_slot));
             } else {
                 status[0].SetActive(false);
             }
             
             if (hobj.second_slot != (Powerups.None, SubPowerups.None)){
+                status[1].SetActive(true);
                 status[1].GetComponent<statusManagement>().setNames((hobj.second_slot));
             } else {
                 status[1].SetActive(false);
@@ -44,7 +46,6 @@ public class HackableStatus : MonoBehaviour
     }
 
     void Start(){
-        Debug.Log("HackableStatus ready");
         close1.onClick.AddListener(()=>{
             Powerups mainpow = hobj.first_slot.Item1;
             SubPowerups secpow = hobj.first_slot.Item2;
